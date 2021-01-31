@@ -28,6 +28,12 @@ Input Option Values (just copy-paste the following code):
 $output = $modx->runSnippet("GalleryAlbums",array("rowTpl"=>"galleryDropdownList"))."none==0"; return $output;
 ```
 
+or as an alternative (you don't nee @EVAL and you don't need the Chunk from point 3
+
+```
+SELECT GROUP_CONCAT(name, '==', id SEPARATOR '||') FROM `modx_gallery_albums` WHERE active=1
+```
+
 Default Value: 0
 
 Enable Type-Ahead: Yes
